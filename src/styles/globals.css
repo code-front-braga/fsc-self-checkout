@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+	--font-inter: 'Inter', sans serif;
+}
+
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
@@ -112,7 +116,7 @@
 
 @layer base {
 	* {
-		@apply outline-ring/50 border-green-700;
+		@apply outline-ring/50 border-input;
 	}
 	body {
 		@apply bg-background text-foreground font-inter;
