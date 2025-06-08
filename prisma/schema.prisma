@@ -9,14 +9,16 @@ datasource db {
 }
 
 model Restaurant {
-  id               String @id @default(cuid())
-  name             String
-  slug             String
-  description      String
-  avatarImageUrl   String
-  coverageImageUrl String
+  id             String @id @default(cuid())
+  name           String
+  slug           String
+  description    String
+  avatarImageUrl String
+  coverImageUrl  String
 
-  orders Order[]
+  menuCategories MenuCategory[]
+  products       Product[]
+  orders         Order[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -25,6 +27,9 @@ model Restaurant {
 model MenuCategory {
   id   String @id @default(cuid())
   name String
+
+  restaurant   Restaurant? @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId String?
 
   products Product[]
 
@@ -42,8 +47,10 @@ model Product {
   imageUrl    String
   ingredients String[]
 
-  menuCategory   MenuCategory? @relation(fields: [menuCategoryId], references: [id])
+  menuCategory   MenuCategory? @relation(fields: [menuCategoryId], references: [id], onDelete: Cascade)
   menuCategoryId String?
+  restaurant     Restaurant?   @relation(fields: [restaurantId], references: [id])
+  restaurantId   String?
 
   orderProducts OrderProduct[]
 
@@ -57,10 +64,13 @@ model Order {
   status            OrderStatus
   consumptionMethod ConsumptionMethod
 
-  restaurant   Restaurant? @relation(fields: [restaurantId], references: [id])
+  restaurant   Restaurant? @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
   restaurantId String?
 
   orderProducts OrderProduct[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model OrderProduct {
@@ -68,10 +78,10 @@ model OrderProduct {
   quantity Int
   price    Float
 
-  order   Order? @relation(fields: [orderId], references: [id])
+  order   Order? @relation(fields: [orderId], references: [id], onDelete: Cascade)
   orderId Int?
 
-  product   Product? @relation(fields: [productId], references: [id])
+  product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId String?
 
   createdAt DateTime @default(now())
