@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import getRestaurantBySlug from '@/app/data/get-restaurant-by-slug';
 
+import RestarantCategories from './components/restaurant-categories';
 import RestaurantHeader from './components/restaurant-header';
 
 interface RestaurantMenuPageProps {
@@ -27,6 +28,7 @@ const RestaurantMenuPage = async ({
 	return (
 		<div>
 			<RestaurantHeader restaurant={restaurant} />
+			<RestarantCategories restaurant={restaurant} />
 		</div>
 	);
 };
