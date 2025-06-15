@@ -17,7 +17,7 @@ const ProductHeader = ({ product }: ProductHeaderProps) => {
 	const handleBackClick = () => back();
 
 	return (
-		<div className="relative h-[300px] w-full">
+		<div className="relative min-h-[300px] w-full">
 			<Button
 				onClick={handleBackClick}
 				variant="secondary"
