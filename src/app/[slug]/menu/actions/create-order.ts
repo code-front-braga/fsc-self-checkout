@@ -1,6 +1,7 @@
 'use server';
 
 import { ConsumptionMethod } from 'generated/prisma';
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 import { prisma } from '@/lib/db/prisma';
@@ -53,6 +54,7 @@ export const createOrder = async (input: CreateOrderInput) => {
 		},
 	});
 
+	revalidatePath(`/${input.slug}/orders`);
 	redirect(
 		`/${input.slug}/orders?cpf=${removeCpfPunctuation(input.customerCpf)}`,
 	);
