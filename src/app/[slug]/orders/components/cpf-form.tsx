@@ -45,11 +45,11 @@ const CpfForm = () => {
 	});
 	const { handleSubmit, control } = form;
 	const router = useRouter();
-	const { back, push } = router;
+	const { back, replace } = router;
 	const pathname = usePathname();
 
 	const onSubmit = async (data: FormSchema) => {
-		push(`${pathname}?cpf=${removeCpfPunctuation(data.cpf)}`);
+		replace(`${pathname}?cpf=${removeCpfPunctuation(data.cpf)}`);
 	};
 
 	const handleCancel = () => back();
