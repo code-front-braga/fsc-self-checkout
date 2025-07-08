@@ -36,7 +36,7 @@ export async function POST(request: Request) {
 					include: { restaurant: { select: { slug: true } } },
 				});
 
-				revalidatePath(`/${order.restaurant?.slug}/menu`);
+				revalidatePath(`/${order.restaurant?.slug}/orders`);
 			}
 			break;
 
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
 					include: { restaurant: { select: { slug: true } } },
 				});
 
-				revalidatePath(`/${order.restaurant?.slug}/menu`);
+				revalidatePath(`/${order.restaurant?.slug}/orders`);
 			}
 			break;
 	}
