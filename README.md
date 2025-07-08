@@ -1,4 +1,4 @@
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
 <img src='/public/print_1.png' alt='Tela inicial com lista de produtos para escolher' />
 <img src='/public/print_2.png' alt='Tela de detalhes do produto selecionado' />
 <img src='/public/print_3.png' alt='Tela dos pedidos' />
