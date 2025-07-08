@@ -2,7 +2,6 @@
 
 import { ConsumptionMethod } from 'generated/prisma';
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 
 import { prisma } from '@/lib/db/prisma';
 
@@ -35,7 +34,7 @@ export const createOrder = async (input: CreateOrderInput) => {
 		quantity: product.quantity,
 		price: productsWithPrices.find(p => p.id === product.id)!.price,
 	}));
-	await prisma.order.create({
+	const order = await prisma.order.create({
 		data: {
 			status: 'PENDING',
 			customerName: input.customerName,
@@ -55,7 +54,8 @@ export const createOrder = async (input: CreateOrderInput) => {
 	});
 
 	revalidatePath(`/${input.slug}/orders`);
-	redirect(
-		`/${input.slug}/orders?cpf=${removeCpfPunctuation(input.customerCpf)}`,
-	);
+	// redirect(
+	// 	`/${input.slug}/orders?cpf=${removeCpfPunctuation(input.customerCpf)}`,
+	// );
+	return order;
 };
