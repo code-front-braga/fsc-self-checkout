@@ -15,7 +15,7 @@ A ideia é oferecer uma experiência fluida onde o cliente monta seu pedido, pag
 
 ## ✔️ Preview
 
-[Projeto Self Checkout]('https://fsc-self-checkout.vercel.app/fsw-donalds')
+[Projeto Self Checkout](https://fsc-self-checkout.vercel.app/fsw-donalds)
 
 ---
 
