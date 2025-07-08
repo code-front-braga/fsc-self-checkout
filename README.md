@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+<img src='/public/print_1.png' alt='Tela inicial com lista de produtos para escolher' />
+<img src='/public/print_2.png' alt='Tela de detalhes do produto selecionado' />
+<img src='/public/print_3.png' alt='Tela dos pedidos' />
+<img src='/public/print_4.png' alt='Tela de pagamento' />
+</div>
 
-## Getting Started
+# 🍔 Self Checkout - Fast Food (Estilo Mc Donald's)
 
-First, run the development server:
+Projeto desenvolvido na **Full Stack Club**, simulando um terminal de autoatendimento em uma lanchonete, com integração real de pagamento via Stripe.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A ideia é oferecer uma experiência fluida onde o cliente monta seu pedido, paga diretamente pelo sistema e acompanha o status do pedido em tempo real.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✔️ Preview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Projeto Self Checkout](https://fsc-self-checkout.vercel.app/fsw-donalds)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Tecnologias Utilizadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 14 (App Router)**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Prisma ORM + SQLite**
+- **Zod + React Hook Form**
+- **Auth.js**
+- **Shadcn UI**
+- **Stripe (Checkout + Webhooks)**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ⚙️ Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Montagem do pedido por categorias
+- ✅ Autenticação de usuário
+- ✅ Integração com **Stripe Checkout**
+- ✅ Webhook para confirmação e status de pedidos
+- ✅ Painel administrativo para ver pedidos em tempo real
+- ✅ UI moderna, responsiva e intuitiva
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧠 O que aprendi
+
+- Utilização de **server actions** do Next.js
+- Gerenciamento de **formularios complexos com validação usando Zod**
+- Implementação de **webhooks do Stripe**
+- **Boas práticas com componentes reutilizáveis** (Shadcn)
+- Gerenciamento de estado e sincronização de dados em tempo real
+- Organização de um projeto **full stack moderno** do zero
+
+---
