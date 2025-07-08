@@ -1,8 +1,8 @@
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
-<img src='/public/print_1.png' alt='Tela inicial com lista de produtos para escolher' />
-<img src='/public/print_2.png' alt='Tela de detalhes do produto selecionado' />
-<img src='/public/print_3.png' alt='Tela dos pedidos' />
-<img src='/public/print_4.png' alt='Tela de pagamento' />
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+  <img src="./public/print_1.png" alt="Tela inicial com lista de produtos" width="45%" />
+  <img src="./public/print_2.png" alt="Tela de detalhes do produto" width="45%" />
+  <img src="./public/print_3.png" alt="Tela dos pedidos em andamento" width="45%" />
+  <img src="./public/print_4.png" alt="Tela de pagamento com Stripe" width="45%" />
 </div>
 
 # 🍔 Self Checkout - Fast Food (Estilo Mc Donald's)
